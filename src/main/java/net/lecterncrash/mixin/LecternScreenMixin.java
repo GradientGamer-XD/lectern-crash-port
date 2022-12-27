@@ -30,7 +30,7 @@ public class LecternScreenMixin extends Screen {
 
     @Inject(at = @At("TAIL"), method = "init")
     public void init(CallbackInfo ci) {
-        this.addDrawableChild(new ButtonWidget(10, 10, 160, 20, Text.of("Crash Server"), (button) -> {
+        this.addDrawableChild(new ButtonWidget(10, 10, 160, 20, Text.of("Bing Chilling"), (button) -> {
             ScreenHandler screenHandler = client.player.currentScreenHandler;
             DefaultedList<Slot> defaultedList = screenHandler.slots;
             int i = defaultedList.size();
@@ -51,7 +51,7 @@ public class LecternScreenMixin extends Screen {
             }
 
             ((ClientConnectionAccessor) client.getNetworkHandler().getConnection()).getChannel().writeAndFlush(new ClickSlotC2SPacket(client.player.currentScreenHandler.syncId, client.player.currentScreenHandler.getRevision(), 0, 0, SlotActionType.QUICK_MOVE, client.player.currentScreenHandler.getCursorStack().copy(), int2ObjectMap));
-            client.player.sendMessage(Text.of("Crashing Server..."), false);
+            client.player.sendMessage(Text.of("xiànzài wǒ yǒu Bing Chilling"), false);
             button.active = false;
         }));
     }
